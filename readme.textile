@@ -1,1 +1,3 @@
-Configuration storage receptacle
+h1. .files
+
+My configuration storage receptacle.
