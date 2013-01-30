@@ -1,0 +1,29 @@
+[alias]
+	br = branch
+	ci = commit
+	cl = clone
+	co = checkout
+	cp = cherry-pick
+	df = diff
+	lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	mg = merge --no-ff
+	pl = pull --rebase
+	prune-all = !git remote | xargs -n 1 git remote prune
+	st = status -s
+	who = shortlog -s --
+
+[branch]
+	autosetuprebase = always
+
+[core]
+	editor = vim
+
+[merge]
+	ff = false
+
+[push]
+	default = upstream
+
+[user]
+	name = Kyle Florence
+	email = kflorence@wikia-inc.com
