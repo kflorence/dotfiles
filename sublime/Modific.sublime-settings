@@ -1,7 +1,0 @@
-{
-	// You can use your commands instead of plain "git" or "svn"
-    // e.g. "/usr/bin/git" or "C:\bin\git.exe"
-    "vcs": [
-        ["git", "/usr/local/git/bin/"]
-    ]
-}
