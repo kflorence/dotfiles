@@ -1,29 +1,40 @@
 [alias]
-	br = branch
-	ci = commit
-	cl = clone
-	co = checkout
-	cp = cherry-pick
-	df = diff
-	lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	mg = merge --no-ff
-	pl = pull --rebase
-	prune-all = !git remote | xargs -n 1 git remote prune
-	st = status -s
-	who = shortlog -s --
+        br = branch
+        ci = commit
+        cl = clone
+        co = checkout
+        cp = cherry-pick
+        df = diff
+        lg = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+        mg = merge --no-ff
+        pl = pull --rebase
+        prune-all = !git branch --merged dev | grep -v 'dev$' | xargs git branch -d && git remote | xargs -n 1 git remote prune
+        publish = !git symbolic-ref --short HEAD | xargs git push --set-upstream origin
+        st = status -s
+        sync = !git-sync # https://github.com/kflorence/git-sync
+        who = shortlog -s --
 
 [branch]
-	autosetuprebase = always
+        autosetuprebase = always
+
+[color]
+        ui = true
+
+[color "status"]
+        added = yellow bold
+        untracked = green bold
+        changed = red bold
 
 [core]
-	editor = vim
+        editor = vim
+        ignorecase = false
 
 [merge]
-	ff = false
+        ff = false
 
 [push]
-	default = upstream
+        default = upstream
 
 [user]
-	name = Kyle Florence
-	email = kflorence@wikia-inc.com
+        name = Kyle Florence
+        email = kyle.florence@gmail.com
