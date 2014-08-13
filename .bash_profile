@@ -3,4 +3,21 @@ function parse_git_branch {
 }
 
 # Nicer looking prompt with git branch in it
-export PS1="\u@\h:\W\$(parse_git_branch)\$ "
+# https://github.com/mbadolato/iTerm2-Color-Schemes
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\[\033[35;1m\]\$(parse_git_branch)\[\033[m\]\$ "
+
+# ls colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+alias ls='ls -GFh'
+
+# bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+# rbenv completion
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# PATH
+export PATH=/usr/local/bin:$PATH
